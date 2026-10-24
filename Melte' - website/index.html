@@ -1,0 +1,512 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melte' | A Little Melt, A Lot of Love</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <nav class="navbar">
+      <a href="#home" class="logo">Melte'</a>
+
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#shop">Classic Collection</a>
+        <a href="#special">Special Orders</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <button class="cart-button" id="cart-button" type="button">
+        My Cart (<span id="cart-count">0</span>)
+      </button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">WELCOME TO MELTE'</p>
+        <h1>A Little Melt,<br>A Lot of Love.</h1>
+        <p>
+          Handcrafted chocolates made with love, creativity and
+          irresistible flavours. Discover happiness in every bite.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#shop" class="btn">Shop Chocolates</a>
+          <a href="#special" class="btn btn-outline">
+            Explore Special Orders
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="images/hero.jpg" alt="Melte' chocolates">
+      </div>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section class="highlights" aria-label="Why choose Melte'">
+      <div class="highlight">Premium Chocolate</div>
+      <div class="highlight">Handcrafted With Love</div>
+      <div class="highlight">Unique Flavours</div>
+      <div class="highlight">Perfect For Gifting</div>
+    </section>
+
+    <!-- CLASSIC COLLECTION -->
+    <section class="section shop-section" id="shop">
+      <p class="eyebrow">OUR SIGNATURE COLLECTION</p>
+      <h2>Classic Chocolate Collection</h2>
+      <p class="section-description">
+        From timeless favourites to our delicious new chocolate
+        flavours. Every classic product comes in a 250g quantity.
+      </p>
+
+      <div class="product-grid" id="classic-products"></div>
+    </section>
+
+    <!-- SPECIAL ORDERS -->
+    <section class="section special-section" id="special">
+      <p class="eyebrow">SOMETHING EXTRA SPECIAL</p>
+      <h2>Special Orders</h2>
+      <p class="section-description">
+        Discover our special flavours, brownies and a beautiful
+        400g chocolate gift box.
+      </p>
+
+      <div class="product-grid" id="special-products"></div>
+    </section>
+
+    <!-- GIFTING -->
+    <section class="gifting">
+      <div class="gifting-content">
+        <p class="eyebrow">SHARE THE SWEETNESS</p>
+        <h2>Chocolate Makes Every Occasion Special</h2>
+        <p>
+          Birthdays, anniversaries, celebrations or a thoughtful
+          surprise — Melte' brings sweetness to every occasion.
+        </p>
+        <a href="#custom-order" class="btn">
+          Enquire About Custom Orders
+        </a>
+      </div>
+
+      <div class="gifting-image">
+        <img src="images/giftbox.jpg" alt="Chocolate gift box">
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section about-section" id="about">
+      <div class="about-content">
+        <p class="eyebrow">OUR STORY</p>
+        <h2>Made to Melt Your Heart</h2>
+
+        <p>
+          At Melte', chocolate is more than a sweet treat.
+          It is a way of celebrating happiness, friendship,
+          love and life's little moments.
+        </p>
+
+        <p>
+          Our collection brings together timeless favourites,
+          exciting flavours, chocolate treats, brownies and gift boxes.
+        </p>
+
+        <p>
+          Whether you're treating yourself or surprising someone
+          special, we want every bite to be memorable.
+        </p>
+      </div>
+
+      <div class="about-art">
+        <img src="images/about.jpg" alt="Melte' chocolate collection">
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDER -->
+    <section class="section custom-section" id="custom-order">
+      <p class="eyebrow">MADE JUST FOR YOU</p>
+      <h2>Personalise Your Chocolate Order</h2>
+
+      <p class="section-description">
+        Planning a celebration or craving something special?
+        Share your preferences with us.
+      </p>
+
+      <form id="custom-form" class="form-card">
+        <label for="custom-name">Your Name</label>
+        <input id="custom-name" type="text" required>
+
+        <label for="custom-email">Email Address</label>
+        <input id="custom-email" type="email" required>
+
+        <label for="custom-flavour">Choose a Product</label>
+        <select id="custom-flavour" required>
+          <option value="">Select a product</option>
+          <option>Classic Chocolate (250g)</option>
+          <option>Peanut Butter Chocolate (250g)</option>
+          <option>Peanut &amp; Dates Chocolate (250g)</option>
+          <option>Coconut Chocolate (250g)</option>
+          <option>Dry Fruit Chocolate (250g)</option>
+          <option>Strawberry Chocolate (250g)</option>
+          <option>Mango Chocolate (250g)</option>
+          <option>Lotus Biscoff Chocolate (250g)</option>
+          <option>Kunafa Chocolate (250g)</option>
+          <option>Chocolate Brownies (250g)</option>
+          <option>Chocolate Gift Box (400g)</option>
+          <option>Other / Mixed Order</option>
+        </select>
+
+        <label for="custom-quantity">Number of Packs / Boxes</label>
+        <input id="custom-quantity" type="number" min="1" value="1" required>
+
+        <label for="custom-message">Special Instructions</label>
+        <textarea
+          id="custom-message"
+          rows="4"
+          placeholder="Tell us about your order..."
+        ></textarea>
+
+        <button class="btn" type="submit">Prepare My Enquiry</button>
+        <p class="form-note">Demo form — enquiries are not sent yet.</p>
+      </form>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq-section">
+      <p class="eyebrow">GOOD TO KNOW</p>
+      <h2>Frequently Asked Questions</h2>
+
+      <div class="faq-container">
+        <details>
+          <summary>What quantity do classic chocolates come in?</summary>
+          <p>All our classic chocolate products are listed as 250g.</p>
+        </details>
+
+        <details>
+          <summary>What is the quantity of the gift box?</summary>
+          <p>Our Chocolate Gift Box contains 400g of chocolates.</p>
+        </details>
+
+        <details>
+          <summary>Can I order brownies?</summary>
+          <p>Yes! Chocolate Brownies are available in Special Orders.</p>
+        </details>
+
+        <details>
+          <summary>Can I pay directly through the website?</summary>
+          <p>
+            Online payments are not available yet.
+            You can place an order using Cash on Delivery
+            while the order server is running.
+          </p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section contact-section" id="contact">
+      <p class="eyebrow">GET IN TOUCH</p>
+      <h2>Let's Make Life Sweeter</h2>
+
+      <p class="section-description">
+        Have a question or a special chocolate idea?
+        We'd love to hear from you.
+      </p>
+
+      <form id="contact-form" class="form-card">
+        <label for="contact-name">Your Name</label>
+        <input id="contact-name" type="text" required>
+
+        <label for="contact-email">Email Address</label>
+        <input id="contact-email" type="email" required>
+
+        <label for="contact-message">Your Message</label>
+        <textarea id="contact-message" rows="5" required></textarea>
+
+        <button class="btn" type="submit">Send Enquiry</button>
+        <p class="form-note">Demo form — messages are not sent yet.</p>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <h2>Melte'</h2>
+    <p>A Little Melt, A Lot of Love.</p>
+    <p>Handcrafted happiness in every bite.</p>
+
+    <div class="footer-links">
+      <a href="#home">Home</a>
+      <a href="#shop">Classic Collection</a>
+      <a href="#special">Special Orders</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <p class="copyright">© 2026 Melte'. All rights reserved.</p>
+  </footer>
+
+  <!-- CART OVERLAY -->
+  <div id="cart-overlay" class="cart-overlay" hidden></div>
+
+  <!-- CART PANEL -->
+  <aside
+    id="cart-panel"
+    class="cart-panel"
+    aria-hidden="true"
+    aria-label="Shopping cart"
+  >
+    <div class="cart-header">
+      <h2 class="cart-title">Your Cart</h2>
+
+      <button
+        type="button"
+        id="close-cart"
+        class="close-cart"
+        aria-label="Close cart"
+      >
+        &times;
+      </button>
+    </div>
+
+    <div id="cart-items" class="cart-items"></div>
+
+    <div class="cart-footer">
+      <h3>Total: ₹<span id="cart-total">0</span></h3>
+
+      <button
+        type="button"
+        id="checkout-button"
+        class="btn"
+      >
+        Proceed to Checkout
+      </button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT POPUP -->
+  <div class="checkout-modal" id="checkout-modal" hidden>
+
+    <div
+      class="checkout-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="checkout-heading"
+    >
+
+      <!-- HERO IMAGE AT TOP -->
+      <div class="checkout-banner">
+        <img
+          src="images/hero.jpg"
+          alt="Handcrafted Melte' chocolates"
+        >
+
+        <button
+          type="button"
+          id="close-checkout"
+          class="close-checkout"
+          aria-label="Close checkout"
+        >
+          &times;
+        </button>
+      </div>
+
+      <!-- CHECKOUT CONTENT -->
+      <div class="checkout-content">
+
+        <p class="checkout-eyebrow">
+          MELTE' · HANDCRAFTED WITH LOVE
+        </p>
+
+        <h2 id="checkout-heading">Complete Your Order</h2>
+
+        <p class="checkout-intro">
+          Just a few details and your chocolates are on their way.
+        </p>
+
+        <form id="checkout-form">
+
+          <!-- NAME -->
+          <div class="checkout-field">
+            <label for="customer-name">Full Name</label>
+            <input
+              type="text"
+              id="customer-name"
+              name="name"
+              placeholder="Enter your full name"
+              autocomplete="name"
+              required
+            >
+          </div>
+
+          <!-- PHONE -->
+          <div class="checkout-field">
+            <label for="customer-phone">Phone Number</label>
+            <input
+              type="tel"
+              id="customer-phone"
+              name="phone"
+              placeholder="Enter your phone number"
+              autocomplete="tel"
+              required
+            >
+          </div>
+
+          <!-- ADDRESS -->
+          <div class="checkout-field">
+            <label for="customer-address">Delivery Address</label>
+            <textarea
+              id="customer-address"
+              name="address"
+              placeholder="Enter your complete delivery address"
+              rows="3"
+              autocomplete="street-address"
+              required
+            ></textarea>
+          </div>
+
+          <!-- ORDER SUMMARY -->
+          <div class="checkout-summary">
+            <h3>Your Order Summary</h3>
+
+            <div id="checkout-order-items"></div>
+
+            <div class="checkout-total">
+              <span>Total</span>
+              <strong id="checkout-order-total">₹0</strong>
+            </div>
+          </div>
+
+          <!-- PAYMENT METHODS -->
+          <fieldset class="payment-fieldset">
+            <legend>Select Payment Method</legend>
+
+            <div class="payment-options">
+
+              <label>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="upi"
+                  disabled
+                >
+                UPI
+                <span class="payment-soon">Coming soon</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="card"
+                  disabled
+                >
+                Debit / Credit Card
+                <span class="payment-soon">Coming soon</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="bank"
+                  disabled
+                >
+                Net Banking
+                <span class="payment-soon">Coming soon</span>
+              </label>
+
+              <label>
+                <input
+                  type="radio"
+                  name="payment"
+                  value="cod"
+                  checked
+                >
+                Cash on Delivery
+              </label>
+
+            </div>
+          </fieldset>
+
+          <!-- PLACE ORDER -->
+          <button
+            type="submit"
+            class="btn checkout-submit"
+          >
+            Place Order
+          </button>
+
+          <p class="checkout-note">
+            Cash on Delivery only · No online payment collected
+          </p>
+
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!-- MELTE' ORDER SUCCESS POPUP -->
+<div id="order-success-modal" class="order-success-modal" hidden>
+  <div class="order-success-box"
+       role="dialog"
+       aria-modal="true"
+       aria-labelledby="order-success-title">
+
+    <div class="success-icon">✓</div>
+
+    <p class="success-brand">MELTE' · MADE WITH LOVE</p>
+
+    <h2 id="order-success-title">
+      Thank You for Your Order!
+    </h2>
+
+    <p class="success-message">
+      Your order has been placed successfully.
+      We're preparing a little sweetness just for you!
+    </p>
+
+    <div class="success-details">
+      <div class="success-detail-row">
+        <span>Order ID</span>
+        <strong id="success-order-id">—</strong>
+      </div>
+
+      <div class="success-detail-row">
+        <span>Order Total</span>
+        <strong id="success-order-total">₹0</strong>
+      </div>
+
+      <div class="success-detail-row">
+        <span>Payment Method</span>
+        <strong>Cash on Delivery</strong>
+      </div>
+    </div>
+
+    <button
+      type="button"
+      id="success-continue"
+      class="btn success-button">
+      Continue Shopping
+    </button>
+
+    <p class="success-footer">
+      A Little Melt, A Lot of Love. ♡
+    </p>
+
+  </div>
+</div>
+
+</body>
+</html>

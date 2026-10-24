@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melte' | Admin Login</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #fffaf5;
+      font-family: Arial, sans-serif;
+      color: #4b281d;
+      padding: 20px;
+    }
+
+    .login-box {
+      background: white;
+      width: 100%;
+      max-width: 400px;
+      padding: 40px 30px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 10px 40px rgba(75,40,29,0.12);
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: 34px;
+      margin-bottom: 8px;
+    }
+
+    .subtitle {
+      color: #9b7666;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      font-size: 14px;
+      margin-bottom: 8px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      border: 1px solid #e4d2c5;
+      border-radius: 10px;
+      font-size: 15px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      width: 100%;
+      background: #4b281d;
+      color: white;
+      padding: 15px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #784331;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: #b97a42;
+      font-size: 13px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="login-box">
+    <h1>MELTE'</h1>
+    <p class="subtitle">Admin Dashboard Login</p>
+
+    <form method="POST" action="/admin/login">
+      <label for="password">Admin Password</label>
+
+      <input
+        type="password"
+        id="password"
+        name="password"
+        placeholder="Enter admin password"
+        autocomplete="current-password"
+        required
+      >
+
+      <button type="submit">Login to Dashboard</button>
+    </form>
+
+    <p class="footer">
+      A Little Melt, A Lot of Love. ♡
+    </p>
+  </div>
+</body>
+</html>

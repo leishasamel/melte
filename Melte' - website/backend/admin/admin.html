@@ -1,0 +1,458 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Melte' | Admin Dashboard</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fffaf5;
+      color: #4b281d;
+    }
+
+    header {
+      background: #4b281d;
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-family: Georgia, serif;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .welcome {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.06);
+    }
+
+    .welcome h2 {
+      margin-top: 0;
+    }
+ 
+    /* Premium Melte' admin dashboard */
+    :root {
+      --melte-brown: #4b281d;
+      --melte-cream: #fffaf5;
+      --melte-peach: #f3dfd1;
+      --melte-pink: #f8e9e8;
+      --melte-gold: #c5a05a;
+      --melte-text: #4b352d;
+      --melte-muted: #89766c;
+    }
+
+    body {
+      background: var(--melte-cream);
+      color: var(--melte-text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4b281d, #704735);
+      padding: 32px 20px;
+      box-shadow: 0 4px 18px rgba(75, 40, 29, 0.12);
+    }
+
+    header h1 {
+      font-size: 30px;
+      letter-spacing: 2px;
+    }
+
+    header p {
+      color: #f3dfd1;
+      margin-bottom: 0;
+      letter-spacing: 0.5px;
+    }
+
+    main {
+      max-width: 1180px;
+      margin: 36px auto;
+      padding: 0 24px;
+    }
+
+    .welcome {
+      box-sizing: border-box;
+      border: 1px solid #eee2d7;
+      border-radius: 18px;
+      padding: 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 8px 28px rgba(75, 40, 29, 0.06);
+    }
+
+    .welcome h2 {
+      color: var(--melte-brown);
+      font-size: 24px;
+      margin-bottom: 14px;
+    }
+
+    .welcome p {
+      color: var(--melte-muted);
+      line-height: 1.7;
+    }
+
+    /* Summary cards */
+    main > .welcome:nth-of-type(2) > p {
+      display: inline-block;
+      box-sizing: border-box;
+      width: calc(33.333% - 16px);
+      min-width: 190px;
+      min-height: 95px;
+      vertical-align: top;
+      background: var(--melte-cream);
+      border: 1px solid #eee2d7;
+      border-top: 4px solid var(--melte-gold);
+      border-radius: 13px;
+      padding: 18px;
+      margin: 8px 12px 18px 0;
+    }
+
+    #total-orders,
+    #total-value,
+    #pending-orders {
+      display: inline-block;
+      color: var(--melte-brown);
+      font-size: 25px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+
+    .welcome h3 {
+      color: var(--melte-brown);
+      font-size: 20px;
+      border-bottom: 1px solid #eee2d7;
+      padding-bottom: 14px;
+      margin-top: 28px;
+    }
+
+    
+/* Individual order cards */
+#orders-list > div {
+  background: #fffdfb;
+  border: 1px solid #eee2d7;
+  border-left: 5px solid var(--melte-gold);
+  border-radius: 14px;
+  padding: 20px;
+  margin: 16px 0;
+  box-shadow: 0 4px 16px rgba(75, 40, 29, 0.05);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+#orders-list > div:hover {
+  box-shadow: 0 8px 24px rgba(75, 40, 29, 0.1);
+  transform: translateY(-2px);
+}
+
+#orders-list h4 {
+  color: var(--melte-brown);
+  font-size: 16px;
+  margin: 0 0 10px;
+}
+
+#orders-list p {
+  font-size: 14px;
+  overflow-wrap: anywhere;
+}
+
+
+    #orders-list p {
+      font-size: 14px;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 700px) {
+      main {
+        margin: 22px auto;
+        padding: 0 14px;
+      }
+
+      .welcome {
+        padding: 20px;
+      }
+
+      main > .welcome:nth-of-type(2) > p {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        margin-right: 0;
+      }
+    }
+ 
+  .dashboard-hero {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 14px;
+  margin: 18px 0;
+  box-shadow: 0 6px 20px rgba(75, 40, 29, 0.12);
+}
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Melte' Admin</h1>
+    <p>Chocolate Order Management</p>
+  </header>
+
+   
+<main>
+  <section class="welcome">
+    <h2>Welcome to Your Dashboard</h2>
+<img src="/images/hero.jpg" alt="Melte' Chocolate" class="dashboard-hero">
+    <p>
+      Manage your chocolate orders, customers,
+      and deliveries from one place.
+    </p>
+  </section>
+
+  <section class="welcome">
+    <h2>Order Management</h2>
+
+    <p>Total Orders: <strong id="total-orders">Loading...</strong></p>
+    <p>Total Order Value: ₹<strong id="total-value">Loading...</strong></p>
+    <p>Pending Orders: <strong id="pending-orders">Loading...</strong></p>
+
+    <h3>Recent Orders</h3>
+    <div id="orders-list">Loading orders...</div>
+  </section>
+
+<section class="welcome">
+  <h2>Product Management</h2>
+  <p>Add, edit, or delete chocolates.</p>
+  <div id="admin-products"></div>
+  <h3>Add Product</h3>
+  <form id="add-product-form">
+    <input name="name" placeholder="Product name" required maxlength="100">
+    <input name="price" type="number" min="1" placeholder="Price ₹" required>
+    <input name="quantity" value="250g" required>
+    <input name="description" placeholder="Description">
+    <input name="image" placeholder="Image path (optional)">
+    <select name="category">
+      <option value="classic">Classic</option>
+      <option value="special">Special</option>
+    </select>
+    <button type="submit">Add Product</button>
+  </form>
+  <p id="product-message" role="status"></p>
+</section>
+
+</main>
+
+<script>
+async function loadDashboardOrders() {
+  const ordersList = document.getElementById("orders-list");
+
+  try {
+    const response = await fetch("/api/admin/dashboard/orders");
+
+    if (!response.ok) {
+      throw new Error("Could not load orders. Please log in again.");
+    }
+
+    const data = await response.json();
+
+    document.getElementById("total-orders").textContent = data.total_orders;
+    document.getElementById("total-value").textContent =
+      Number(data.total_value).toLocaleString("en-IN");
+    document.getElementById("pending-orders").textContent =
+      data.pending_orders;
+
+    ordersList.replaceChildren();
+
+    if (!data.orders.length) {
+      ordersList.textContent = "No orders yet.";
+      return;
+    }
+
+    data.orders.forEach(order => {
+      const card = document.createElement("div");
+      const heading = document.createElement("h4");
+      heading.textContent =
+        `Order #${order.order_id} — ${order.customer_name}`;
+
+      const details = document.createElement("p");
+      details.textContent =
+        `Total: ₹${order.total} | Status: ${order.status}`;
+
+      const items = document.createElement("p");
+      items.textContent = (order.items || [])
+        .map(item => `${item.product} × ${item.quantity}`)
+        .join(", ");
+
+      const statusSelect = document.createElement("select");
+      ["Pending", "Processing", "Shipped", "Delivered", "Cancelled"]
+        .forEach(status => {
+          const option = document.createElement("option");
+          option.value = status;
+          option.textContent = status;
+          statusSelect.appendChild(option);
+        });
+      statusSelect.value = order.status;
+
+      const saveButton = document.createElement("button");
+      saveButton.textContent = "Save Status";
+      saveButton.style.marginLeft = "12px";
+      saveButton.style.padding = "9px 14px";
+      saveButton.style.cursor = "pointer";
+
+      const message = document.createElement("p");
+      message.setAttribute("role", "status");
+
+      saveButton.addEventListener("click", async () => {
+        saveButton.disabled = true;
+        message.textContent = "Saving...";
+
+        try {
+          const response = await fetch(
+            `/api/admin/dashboard/orders/${order.order_id}/status`,
+            {
+              method: "POST",
+              headers: {"Content-Type": "application/json"},
+              body: JSON.stringify({status: statusSelect.value})
+            }
+          );
+
+          if (!response.ok) {
+            throw new Error("Could not update status");
+          }
+
+          await loadDashboardOrders();
+        } catch (error) {
+          message.textContent = error.message;
+          saveButton.disabled = false;
+        }
+      });
+
+      const customer = document.createElement("p");
+      customer.textContent =
+        `Phone: ${order.phone} | Address: ${order.address}`;
+
+      const payment = document.createElement("p");
+      payment.textContent =
+        `Payment: ${order.payment_method} | Date: ${new Date(order.created_at).toLocaleString("en-IN")}`;
+
+      card.append(
+        heading, details, items, customer, payment,
+        statusSelect, saveButton, message
+      );
+      ordersList.appendChild(card);
+    });
+  } catch (error) {
+    ordersList.textContent = error.message;
+  }
+}
+
+loadDashboardOrders();
+
+async function loadAdminProducts() {
+  const container = document.getElementById("admin-products");
+  try {
+    const response = await fetch("/api/admin/products");
+    if (!response.ok) throw new Error("Cannot load products");
+    const products = await response.json();
+    container.replaceChildren();
+
+    products.forEach(product => {
+      const row = document.createElement("div");
+      row.style.padding = "12px";
+      row.style.borderBottom = "1px solid #ddd";
+
+      const label = document.createElement("strong");
+      label.textContent = `${product.name} — ₹${product.price}`;
+
+      const edit = document.createElement("button");
+      edit.textContent = "Edit";
+      edit.style.margin = "8px";
+      edit.onclick = async () => {
+        const name = prompt("Product name", product.name);
+        if (name === null) return;
+        const price = prompt("Price ₹", product.price);
+        if (price === null) return;
+        const quantity = prompt("Weight", product.quantity);
+        if (quantity === null) return;
+
+        const response = await fetch(
+          `/api/admin/products/${product.id}`, {
+            method: "PUT",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify({
+              ...product, name, price, quantity
+            })
+          }
+        );
+        if (!response.ok) {
+          alert("Update failed. Check product details.");
+          return;
+        }
+        loadAdminProducts();
+      };
+
+      const remove = document.createElement("button");
+      remove.textContent = "Delete";
+      remove.onclick = async () => {
+        if (!confirm(`Delete ${product.name}?`)) return;
+        const response = await fetch(
+          `/api/admin/products/${product.id}`,
+          {method: "DELETE"}
+        );
+        if (!response.ok) {
+          alert("Could not delete product");
+          return;
+        }
+        loadAdminProducts();
+      };
+
+      row.append(label, edit, remove);
+      container.appendChild(row);
+    });
+  } catch (error) {
+    container.textContent = error.message;
+  }
+}
+
+document.getElementById("add-product-form")
+  .addEventListener("submit", async event => {
+    event.preventDefault();
+    const form = event.currentTarget;
+    const data = Object.fromEntries(new FormData(form));
+    const message = document.getElementById("product-message");
+
+    const response = await fetch("/api/admin/products", {
+      method: "POST",
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(data)
+    });
+
+    if (!response.ok) {
+      message.textContent = "Could not add product.";
+      return;
+    }
+
+    form.reset();
+    message.textContent = "Product added!";
+    loadAdminProducts();
+  });
+
+loadAdminProducts();
+
+</script>
+
+</body>
+</html>

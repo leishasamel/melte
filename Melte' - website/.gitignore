@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+backend/.admin_secret
+
+# Local databases and order data
+backend/*.db
+backend/*.sqlite
+backend/*.sqlite3
+backend/orders*.json
+
+# Local code and database backups
+backend/*backup*
+backend/app_before_*.py
+backend/app_pre_deploy_backup.py
+backend/phase3_backup/
+
+backend/admin/*_before_*.html
+.neon
+node_modules/
